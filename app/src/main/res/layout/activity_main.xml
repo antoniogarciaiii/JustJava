@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -22,12 +23,12 @@
         android:text="0"
         android:textSize="16sp" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="submitOrder"
-        android:text="Order"
-        android:textAllCaps="true" />
+        android:text="Price"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/price_text_view"
@@ -35,9 +36,8 @@
         android:layout_height="wrap_content"
         android:paddingBottom="16dp"
         android:paddingTop="16dp"
-        android:text="Price"
-        android:textAllCaps="true"
-        android:textSize="16sp" />
+        android:text="0
+" />
 
     <Button
         android:layout_width="wrap_content"
