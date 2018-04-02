@@ -25,8 +25,25 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="submitOrder"
         android:text="Order"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:text="Price"
         android:textAllCaps="true"
-        android:onClick="submitOrder"/>
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitOrder"
+        android:text="Order"
+        android:textAllCaps="true" />
 
 </LinearLayout>
