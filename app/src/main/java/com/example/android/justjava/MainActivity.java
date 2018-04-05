@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Total: $" + price;
         priceMessage = priceMessage + "\nThank you!";
         displayMessage(priceMessage);
+        calculatePrice();
+    }
+
+    /**
+     * Calculates the price of the order.
+     */
+    private void calculatePrice() {
+        int price = quantity * 5;
     }
 
     /**
