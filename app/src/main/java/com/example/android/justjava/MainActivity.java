@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Calculates the price of the order.
-     * @return  total price
+     * @return  total price of order
      */
     private int calculatePrice() {
         int price = quantity * 5;
