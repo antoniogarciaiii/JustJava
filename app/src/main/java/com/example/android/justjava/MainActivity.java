@@ -92,4 +92,5 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\nThank you!";
         return priceMessage;
     }
+
 }
