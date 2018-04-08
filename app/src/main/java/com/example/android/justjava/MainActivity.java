@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
      * @return  total price of order
      */
     private int calculatePrice() {
-        return  = quantity * 5;
+        return quantity * 5;
     }
 
     /**
