@@ -17,19 +17,23 @@
             android:text="Toppings"
             android:textAllCaps="true" />
 
-        <LinearLayout
+
+        <CheckBox
+            android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:paddingLeft="24dp"
+            android:text="Whipped cream"
+            android:textSize="16sp" />
 
-            <CheckBox
-                android:id="@+id/whipped_cream_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="24dp"
-                android:text="Whipped cream"
-                android:textSize="16sp" />
-        </LinearLayout>
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:text="Chocolate"
+            android:textSize="16sp" />
+
 
         <TextView
             android:layout_width="wrap_content"
