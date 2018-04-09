@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -26,7 +27,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clicked.
      */
     public void increment(View view) {
+        if (quantity == 100){
+            Toast.makeText(getApplicationContext(), "You can't order 100+ coffees",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
@@ -83,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the - button is clicked.
      */
     public void decrement(View view) {
+        if (quantity == 1) {
+            Toast.makeText(getApplicationContext(), "You can't order 0 coffees",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
     }
