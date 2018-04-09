@@ -12,9 +12,11 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -36,12 +38,16 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText customerNameEntryBox = (EditText) findViewById(R.id.customer_Name);
+        String customername = customerNameEntryBox.getText().toString(); //gets you the contents of edit text
+
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream =  whippedCreamCheckBox.isChecked();
+
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(customername, price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
 
@@ -89,12 +95,18 @@ public class MainActivity extends AppCompatActivity {
     /**
      *  This method displays a summary of the order
      *  @param price of the order
+     *  @param nombreDeCliente is the name of the customer.
+     *                         no, i couldn't think of any other name for this argument.
+     *                         because it is analogous to name, it works for me.
+     *                         i don't intend to share this code with anyone.
+     *                         i'm bilingual--this works for me.
+     *                         don't judge.
      *  @param addWhippedCream is whether or not user wants whipped cream topping
      *  @param addChocolate is whether or not the user wants chocolate topping
      *  @return text summary of order
      */
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: Lyla the labyrinth";
+    private String createOrderSummary(String nombreDeCliente, int price, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage = "Name: " + nombreDeCliente;
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nquantity: " + quantity;
