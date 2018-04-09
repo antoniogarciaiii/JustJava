@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava order for " + customerName);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_summary_email_subject, customerName));
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if (quantity == 100){
-            Toast.makeText(getApplicationContext(), "You can't order 100+ coffees",
+            Toast.makeText(getApplicationContext(), getString(R.string.incremenent_coffee_warning),
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         if (quantity == 1) {
-            Toast.makeText(getApplicationContext(), "You can't order 0 coffees",
+            Toast.makeText(getApplicationContext(), getString(R.string.decrement_coffee_warning),
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -131,12 +131,12 @@ public class MainActivity extends AppCompatActivity {
      *  @return text summary of order
      */
     private String createOrderSummary(String nombreDeCliente, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: " + nombreDeCliente;
-        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
-        priceMessage += "\nAdd chocolate? " + addChocolate;
-        priceMessage += "\nquantity: " + quantity;
-        priceMessage += "\nTotal: $" + price;
-        priceMessage += "\nThank you!";
+        String priceMessage = getString(R.string.order_summary_name, nombreDeCliente);
+        priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
+        priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
+        priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
+        priceMessage += "\n" + getString(R.string.order_summary_price, NumberFormat.getCurrencyInstance().format(price));
+        priceMessage += "\n" + getString(R.string.thank_you);
         return priceMessage;
     }
 
